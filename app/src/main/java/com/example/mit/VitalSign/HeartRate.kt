@@ -145,7 +145,7 @@ class HeartRate : AppCompatActivity() {
         val policy = StrictMode.ThreadPolicy.Builder().permitAll().build()
         StrictMode.setThreadPolicy(policy)
 
-        val jdbcURL = "jdbc:postgresql://:5432/thingsboard"
+        val jdbcURL = 
         val username = ""
         val password = ""
 
