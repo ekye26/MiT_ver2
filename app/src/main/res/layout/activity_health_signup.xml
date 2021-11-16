@@ -1,0 +1,446 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_gravity="center|center_horizontal"
+    android:background="#34FF9800">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginBottom="1dp"
+            android:orientation="vertical">
+
+
+            <TextView
+                android:id="@+id/textView30"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:gravity="center"
+                android:text="회원가입"
+                android:textColor="@color/black"
+                android:textSize="40dp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:id="@+id/name"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="이름"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/black" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <RadioGroup
+                        android:id="@+id/gender"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/male"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="남"
+                            android:textSize="20sp" />
+
+                        <RadioButton
+                            android:id="@+id/female"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
+                            android:text="여"
+                            android:textSize="20sp" />
+
+                    </RadioGroup>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/birth"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="출생년도"
+                android:inputType="date|textPersonName"
+                android:textColorHint="@color/black" />
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:id="@+id/sign_up_id"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:ems="10"
+                    android:hint="아이디"
+                    android:inputType="textPersonName"
+                    android:textColorHint="@color/black" />
+
+                <Button
+                    android:id="@+id/id_check_btn"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:text="중복확인" />
+            </TableRow>
+
+            <EditText
+                android:id="@+id/sign_up_pw"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호"
+                android:visibility="gone" />
+
+            <EditText
+                android:id="@+id/sign_up_pw_ch"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:hint="비밀번호 확인 "
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/sign_pw_re"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="right"
+                android:textColor="#FF0000"
+                android:textStyle="bold"
+                android:visibility="gone" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView22"
+                    style="@style/Widget.AppCompat.TextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:gravity="left"
+                    android:text="[ 기저질환 설문 ]"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="기저질환 증상을 선택해주세요." />
+
+                <RadioGroup
+                    android:id="@+id/yn"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <RadioButton
+                            android:id="@+id/yes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="있음" />
+
+                        <RadioButton
+                            android:id="@+id/no"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="없음" />
+                    </LinearLayout>
+                </RadioGroup>
+
+                <TableLayout
+                    android:id="@+id/lo"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/checkBox23"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="고혈압" />
+
+                        <CheckBox
+                            android:id="@+id/checkBox27"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="골다공증" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/checkBox28"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="저혈압" />
+
+                        <CheckBox
+                            android:id="@+id/checkBox29"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="심근경색" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/checkBox33"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="이상지질혈증" />
+
+                        <CheckBox
+                            android:id="@+id/checkBox34"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="빈혈" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/checkBox36"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="당뇨병" />
+
+                        <CheckBox
+                            android:id="@+id/checkBox37"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="뇌졸증" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/checkBox38"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="협심증" />
+
+                        <CheckBox
+                            android:id="@+id/checkBox39"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="폐쇄성페질환" />
+                    </TableRow>
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/checkBox40"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="불면증" />
+
+                        <CheckBox
+                            android:id="@+id/checkBox41"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="기타질환" />
+
+                        <EditText
+                            android:id="@+id/editTextTextPersonName5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:ems="5"
+                            android:hint="병증 "
+                            android:inputType="textPersonName"
+                            android:maxLength="5" />
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="[ 음주 및 흡연여부 ]"
+                    android:textColor="@color/black"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="대략적인 양을 선택해주세요." />
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" >
+
+                        <CheckBox
+                            android:id="@+id/checkBox42"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="음주"
+                            android:checked="false"/>
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/alchol_s"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RadioGroup>
+
+                            <RadioButton
+                                android:id="@+id/checkBox44"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="주 1회 "
+                                android:visibility="invisible"/>
+
+                            <RadioButton
+                                android:id="@+id/checkBox46"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="주 3회 "
+                                android:visibility="invisible"/>
+
+                            <RadioButton
+                                android:id="@+id/checkBox45"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="주 5회 이상 "
+                                android:visibility="invisible"/>
+
+                        </RadioGroup>
+
+                    </TableRow>
+
+
+                    <TableRow
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <CheckBox
+                            android:id="@+id/checkBox43"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="흡연" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/ciga_s"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        >
+
+                        <RadioGroup>
+
+                            <RadioButton
+                                android:id="@+id/checkBox48"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="5개비 이하 "
+                                android:visibility="invisible" />
+
+
+                            <RadioButton
+                                android:id="@+id/checkBox47"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="반갑"
+                                android:visibility="invisible"/>
+
+
+                            <RadioButton
+                                android:id="@+id/checkBox49"
+                                android:layout_width="88dp"
+                                android:layout_height="wrap_content"
+                                android:text="한갑"
+                                android:visibility="invisible"/>
+
+
+                            <RadioButton
+                                android:id="@+id/checkBox50"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="한갑 이상"
+                                android:visibility="invisible"/>
+
+                        </RadioGroup>
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/signup_ok"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="50dp"
+                android:text="회원가입완료" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

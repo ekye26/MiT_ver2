@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.mit">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="com.google.android.gms.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.ACTIVITY_RECOGNITION" />
+    <uses-permission android:name="android.permission.BODY_SENSORS" />
+    <uses-permission android:name="android.permission.FITNESS_BODY_READ" />
+
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.MiT">
+
+        <service android:name="org.eclipse.paho.android.service.MqttService" />
+
+        <receiver android:name=".VitalSign.Alarm.AlarmReceiver" />
+        <receiver android:name=".VitalSign.Alarm.DeviceBootReceiver"
+            android:enabled="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity android:name=".MainActivity" />
+        <activity android:name=".VitalSign.HeartRate" />
+        <activity android:name=".VitalSign.StepCounter" />
+        <activity android:name=".VitalSign.Health_sleep" />
+        <activity android:name=".mainhealthcare.Health_setting" />
+        <activity android:name=".VitalSign.Health_survey" />
+        <activity android:name=".mainhealthcare.Health_information" />
+        <activity android:name=".mainhealthcare.Health_information_signup"/>
+        <activity android:name=".mainhealthcare.Health_scroll" />
+        <activity android:name=".mainhealthcare.Health_Tos" />
+        <activity android:name=".mainhealthcare.Health_signup" />
+        <activity android:name=".mainhealthcare.Health_login" />
+
+        <activity android:name=".mainhealthcare.Health_main">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+    </application>
+
+</manifest>
