@@ -1,6 +1,5 @@
 package com.example.mit.VitalSign
 
-
 import android.Manifest
 import android.content.Context
 import android.content.Intent
@@ -520,8 +519,8 @@ class HeartRate : AppCompatActivity() {
 
     private fun connect(context: Context, total: MutableList<Int>, times : MutableList<String>) {
 
-        val topic = "v1/devices/me/telemetry"
-        val mqttAndroidClient = MqttAndroidClient(context, "tcp://" + "203.255.56.50" + ":1883", MqttClient.generateClientId())
+        val topic = "v1"
+        val mqttAndroidClient = MqttAndroidClient(context, "tcp://" + "" + ":1883", MqttClient.generateClientId())
 
         try {
             val options = MqttConnectOptions()
