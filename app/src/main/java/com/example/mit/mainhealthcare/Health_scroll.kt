@@ -47,21 +47,25 @@ class Health_scroll : AppCompatActivity() {
             //아이디를 다음 activity에 보내준다.
             val ID = intent.getStringExtra("ID")
             val TOKEN = intent.getStringExtra("TOKEN")
+            val entity_ID = intent.getStringExtra("entity_ID")
 
             println("----------$ID, $TOKEN-----------")
-            step("$ID", "$TOKEN")
+            step("$ID", "$TOKEN","$entity_ID")
         }
 
         button_heart.setOnClickListener {
             val ID = intent.getStringExtra("ID")
             val TOKEN = intent.getStringExtra("TOKEN")
+            val entity_ID = intent.getStringExtra("entity_ID")
+
             println("----------$ID, $TOKEN-----------")
-            heart("$ID", "$TOKEN")
+            heart("$ID", "$TOKEN","$entity_ID")
         }
 
         button_survey.setOnClickListener {
             val ID = intent.getStringExtra("ID")
             val TOKEN = intent.getStringExtra("TOKEN")
+            val entity_ID = intent.getStringExtra("entity_ID")
             println("----------$ID, $TOKEN-----------")
             survey("$ID", "$TOKEN")
         }
@@ -70,6 +74,7 @@ class Health_scroll : AppCompatActivity() {
             //아이디를 다음 activity에 보내준다.
             val ID = intent.getStringExtra("ID")
             val TOKEN = intent.getStringExtra("TOKEN")
+
             println("----------$ID, $TOKEN-----------")
             sleep("$ID", "$TOKEN")
         }
@@ -80,20 +85,21 @@ class Health_scroll : AppCompatActivity() {
         }
     }
 
-    private fun step(ID: String, TOKEN:String) {
+    private fun step(ID: String, TOKEN:String,entity_ID:String) {
         //아이디를 다음 activity에 보내준다.
         val intent = Intent(this, StepCounter::class.java)
         intent.putExtra("ID", ID)
         intent.putExtra("TOKEN", TOKEN)
+        intent.putExtra("entity_ID",entity_ID)
         startActivity(intent)
     }
 
-    private fun heart(ID: String, TOKEN:String) {
+    private fun heart(ID: String, TOKEN:String,entity_ID:String) {
         //아이디를 다음 activity에 보내준다.
         val intent = Intent(this, HeartRate::class.java)
         intent.putExtra("ID", ID)
         intent.putExtra("TOKEN", TOKEN)
-
+        intent.putExtra("entity_ID",entity_ID)
         startActivity(intent)
     }
 
@@ -112,6 +118,7 @@ class Health_scroll : AppCompatActivity() {
         val intent = Intent(this, Health_survey::class.java)
         intent.putExtra("ID", ID)
         intent.putExtra("TOKEN", TOKEN)
+
 
         startActivity(intent)
     }

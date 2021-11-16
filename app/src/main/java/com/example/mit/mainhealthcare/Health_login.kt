@@ -61,7 +61,7 @@ class Health_login : AppCompatActivity() {
                 //입력되 아이디값이 중복되는지 확인
                 val output = result.getBoolean("success")
 
-                if (output == true) {
+                if (output) {
 
                     val sql1 = "SELECT token_key FROM account  WHERE 아이디 = '$ID'"
                     val statement1 = connection.createStatement()
@@ -69,6 +69,24 @@ class Health_login : AppCompatActivity() {
 
                     while (result1.next()) {
                         val token = result1.getString("token_key")
+
+                        if (token != null) {
+                            val sql2 = "SELECT entity_ID FROM account  WHERE 아이디 = '$ID'"
+                            val statement2 = connection.createStatement()
+                            val result2 = statement2.executeQuery(sql2)
+
+                            while (result2.next()) {
+
+                                val entity_ID = result1.getString("entity_ID")
+
+                                val intent = Intent(this, Health_scroll::class.java)
+                                intent.putExtra("ID", ID)
+                                intent.putExtra("TOKEN", token)
+                                intent.putExtra("entity_ID",entity_ID)
+                                Toast.makeText(this, "로그인이 완료되었습니다.", Toast.LENGTH_SHORT).show()
+                                startActivity(intent)
+                            }
+                        }
 
                         val intent = Intent(this, Health_scroll::class.java)
                         intent.putExtra("ID", ID)

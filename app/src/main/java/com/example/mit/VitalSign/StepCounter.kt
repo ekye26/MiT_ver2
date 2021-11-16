@@ -179,8 +179,9 @@ class StepCounter: AppCompatActivity() {
 
         try {
             val connection = DriverManager.getConnection(jdbcURL, username, password)
+            val entity_ID = intent.getStringExtra("entity_ID")
             val sql =
-                "SELECT MAX(ts) FROM ts_kv WHERE key = 37 AND entity_ID = 'b2a5a7f0-e4b0-11eb-aa7f-9f302dfd495e'"
+                "SELECT MAX(ts) FROM ts_kv WHERE key = 37 AND entity_ID = '$entity_ID'"
             val statement = connection.createStatement()
             val result = statement.executeQuery(sql)
             println("Connected to PostgreSQL server")
